@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Attachment/attach.md",
+                "file": "2Programming/Python.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Attachment/attach.md",
+                "file": "2Programming/Python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Attachment/attach.md",
+                "file": "2Programming/Python.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Attachment/attach.md"
+                "file": "2Programming/Python.md"
               }
             }
           }
@@ -148,8 +148,20 @@
   },
   "active": "4411b371504e22e0",
   "lastOpenFiles": [
-    "6LLM/July.md",
+    "Attachment/ml-overall.png",
+    "Attachment/ml-4.png",
+    "Attachment/ml-3.png",
+    "Attachment/ml-2.png",
+    "Attachment/ml-1.png",
+    "Attachment/Screen Shot 2023-08-27 at 4.33.29 PM.png",
+    "Attachment/Screen Shot 2023-08-27 at 4.16.44 PM.png",
+    "Attachment/Screen Shot 2023-08-27 at 4.14.44 PM.png",
+    "Attachment/Screen Shot 2023-08-27 at 4.11.18 PM.png",
+    "Attachment/Pasted image 20231028193522.png",
+    "Attachment/Pasted image 20231022173333.png",
+    "Attachment/NLP题.pdf",
     "Attachment/attach.md",
+    "6LLM/July.md",
     "5NLP/word vector.md",
     "4Deep learning/CNN.md",
     "3Machine learning/sk learn.md",
