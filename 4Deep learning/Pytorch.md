@@ -36,5 +36,7 @@ def yield_tokens(data_iter):
 vocab = build_vocab_from_iterator(yield_tokens(train_iter), specials=["<unk>", "<pad>"])
 ```
 
+# Forward函数
 
+model(data)之所以等价于model.forward(data)，就是因为在类（class）中使用了__call__函数
 
