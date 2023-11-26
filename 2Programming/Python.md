@@ -10,3 +10,8 @@ pip install d2l==0.17.6
 ```
 pip freeze > requirement.txt
 ```
+
+
+```bash
+jupyter lab --ip='*' --port=8701 --notebook-dir='/home/niwang' --no-browser
+```
