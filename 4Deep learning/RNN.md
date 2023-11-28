@@ -28,7 +28,9 @@ self.fc = torch.nn.Linear(hidden_size*self.n_directions, output_size)
 ## Forward
 
 embedding = nn.Embedding(vocab_size, embedding_size) 
+
 embedding = self.embedding(x) 
+
 输出：[batch_size, seq_len, embedding_size] 
 
 batch_size = x.size(0)
