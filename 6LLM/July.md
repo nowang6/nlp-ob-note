@@ -25,7 +25,10 @@ python -u finetune.py \
 ```
 
 
-# 机器
+# 环境
 
-Ryzen 5900x
-Gigabyte x570s aorus pro ax
+``` bash
+export XDG_CACHE_HOME = /cache
+export CACHE_HOME = /cache
+export MODELSCOPE_CACHE = /cache/modelscope/hub
+```
