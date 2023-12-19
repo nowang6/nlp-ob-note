@@ -38,7 +38,7 @@ mv zsh-autosuggestions-master .oh-my-zsh/plugins/zsh-autosuggestions
 wget --no-check-certificate  https://github.com/romkatv/powerlevel10k/archive/refs/heads/master.zip
 mv powerlevel10k .oh-my-zsh/custom/themes/powerlevel10k
 
-
+```
 
 # git
 
