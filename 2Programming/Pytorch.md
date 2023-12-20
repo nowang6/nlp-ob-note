@@ -146,7 +146,7 @@ x = torch.ones(2)
 x.requires_grad=True
 z= 4*x
 tensor([4., 4.], grad_fn=<MulBackward0>) # tensor是一个矢量
-y=z.norm()
+y=z.norm() # z的L2范数，(4**2 + 4**2) * 0.5
 tensor(5.6569, grad_fn=<LinalgVectorNormBackward0>) # tensor是一个标量
 ```
 ## 梯度-反向传播
