@@ -156,7 +156,7 @@ x.backward() # 报错grad can be implicitly created only for scalar outputs， �
 y.backward()
 x.grad
 tensor([2.8284, 2.8284])
-z.grad
+z.grad # 报错
 y.grad
 ```
 
