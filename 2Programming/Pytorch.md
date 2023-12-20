@@ -9,7 +9,7 @@ tensor不能反向传播，variable可以反向传播
 
 
 ## Variable（变量）
-variable是封装了tensor并提供自动求导功能的对象
+variable(废弃)是封装了tensor并提供自动求导功能的对象
 ```python
 from torch.autograd import Variable
 
