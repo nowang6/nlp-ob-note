@@ -9,7 +9,7 @@ tensor不能反向传播，variable可以反向传播
 
 
 ## Variable（变量）
-variable是封装了tensor并提供自动求导功能的对象
+variable(废弃)是封装了tensor并提供自动求导功能的对象
 ```python
 from torch.autograd import Variable
 
@@ -146,7 +146,7 @@ x = torch.ones(2)
 x.requires_grad=True
 z= 4*x
 tensor([4., 4.], grad_fn=<MulBackward0>) # tensor是一个矢量
-y=z.norm()
+y=z.norm() # z的L2范数，(4**2 + 4**2) * 0.5
 tensor(5.6569, grad_fn=<LinalgVectorNormBackward0>) # tensor是一个标量
 ```
 ## 梯度-反向传播
@@ -156,7 +156,7 @@ x.backward() # 报错grad can be implicitly created only for scalar outputs， �
 y.backward()
 x.grad
 tensor([2.8284, 2.8284])
-z.grad
+z.grad # 报错
 y.grad
 ```
 
