@@ -1,6 +1,6 @@
 # 环境
 ```
-conda create --name d2l python=3.9 -y
+conda create --name llm python=3.9 -y
 conda activate d2l
 pip install torch==1.12.0
 pip install torchvision==0.13.0
@@ -14,4 +14,10 @@ pip freeze > requirement.txt
 
 ```bash
 jupyter lab --ip='*' --port=8701 --notebook-dir='/home/niwang' --no-browser
+```
+
+# 安装包
+
+```
+
 ```

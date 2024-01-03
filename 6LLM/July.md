@@ -32,3 +32,15 @@ export XDG_CACHE_HOME = /cache
 export CACHE_HOME = /cache
 export MODELSCOPE_CACHE = /cache/modelscope/hub
 ```
+
+
+
+# 模型
+
+chatdoctor
+chatglm2-6b
+ChatGLM-Med
+huatuo
+llama-7b-hf
+MiniGPT-4
+moss-moon-sft-int4
