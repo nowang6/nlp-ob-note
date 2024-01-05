@@ -1,5 +1,5 @@
 # 评价 
-自然语言处理：熟练使用Hugging Face Transformers 库解决NLP 问题，如文本分类、情感分析、命名实体
+自然语言处理：熟练使用Hugging Face Transformers API和预训练模型BERT解决NLP 问题，如文本分类、情感分析、命名实体
 识别等。
 大语言模型：理解ChatGPT 三阶段训练方式，熟悉PEFT，DeepSpeed 和LangChain 等工具。
 云计算：熟悉云原生技术，如devops，容器/k8s，微服务，CICD，虚拟计算，存储和网络等。
