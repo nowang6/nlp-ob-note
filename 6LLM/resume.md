@@ -1,8 +1,8 @@
 # 评价 
-自然语言处理：熟悉RNN/LSTM，熟练使用Hugging Face Transformers API和预训练模型解决NLP任务，如文本分类、情感分析、命名实体识别等。
-大语言模型：理解ChatGPT的训练方式，能使用PEFT，DeepSpeed，LangChain，vLLM，向量数据库等工具微调大语言模型。
-云计算：熟悉云原生技术，如devops，容器/k8s，微服务，CICD，虚拟计算，存储和网络等。
-英语：英语六级和8年全球化团队工作经验，能使用英语流利交流。
+自然语言处理：熟悉RNN/LSTM，熟练使用Hugging Face Transformers API和预训练模型解决NLP任务，如文本分类、情感分析、命名实体识别等。
+大语言模型：理解ChatGPT的训练方式，能使用PEFT，DeepSpeed，LangChain，vLLM，向量数据库等工具微调大语言模型，适配下游任务。
+云计算：熟悉云原生技术，如devops，容器/k8s，微服务，CICD，虚拟计算，存储和网络等。
+英语：英语六级和8年全球化团队工作经验，能使用英语流利交流。
 
 
 # 项目1
