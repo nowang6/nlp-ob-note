@@ -37,8 +37,6 @@ export MODELSCOPE_CACHE = /cache/modelscope/hub
 
 # 模型
 
-chatdoctor
-chatglm2-6b
 ChatGLM-Med
 huatuo
 llama-7b-hf
