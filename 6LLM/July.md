@@ -1,20 +1,15 @@
 # 第一阶段
 ## 训练三阶段
 SFT（Supervised Fine-Tuning）监督微调
-
 RM（Reward Model）
-
 PPO（Proximal Policy Optimization）
-
 RLHF (Reinforcement Learning from Human Feedback)
-
 University of Colorado Boulder
 
 
 # Alpaca-Lora微调
 
 https://github.com/tloen/alpaca-lora
-
 
 ```bash
 
@@ -34,11 +29,8 @@ export MODELSCOPE_CACHE = /cache/modelscope/hub
 ```
 
 
-
 # 模型
 
-ChatGLM-Med
-huatuo
 llama-7b-hf
 MiniGPT-4
 moss-moon-sft-int4

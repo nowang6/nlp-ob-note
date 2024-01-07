@@ -11,7 +11,6 @@ pip install d2l==0.17.6
 pip freeze > requirement.txt
 ```
 
-
 ```bash
 jupyter lab --ip='*' --port=8701 --notebook-dir='/home/niwang' --no-browser
 ```
@@ -28,7 +27,6 @@ Shanghai,C,P2,3,200
 Beijing,B,P3,2,150
 Shanghai,C,P3,1,150
 ```
-
 
 ``` python
 df = pd.read_csv('data.csv')
