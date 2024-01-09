@@ -29,3 +29,4 @@ Fassi的体量
 Loara参数
 各种Embeding
 ChatGLM Lora后的参数
+盲水印算法
