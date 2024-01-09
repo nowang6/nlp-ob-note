@@ -1,5 +1,5 @@
 # 评价 
-- 自然语言处理：熟悉传统NLP技术，包括词嵌入，文本表示和 RNN/LSTM/GRU；熟练使用 huggingface 的 datasets,transformers等模块，配合预训练模型PTM完成文本分类、情感分析、命名实体识别等 NLP 任务。
+- 自然语言处理：熟悉传统NLP技术，包括词嵌入，文本表示和 RNN/LSTM/GRU；熟练使用 huggingface 的 datasets，transformers等模块，配合预训练模型PTM完成文本分类、情感分析、命名实体识别等 NLP 任务。
 - 大语言模型：理解ChatGPT的训练方式，能使用PEFT/LoRA，DeepSpeed，LangChain，vLLM，向量数据库等工具微调大语言模型，适配下游任务。
 - 云计算：熟悉云原生技术，如 devops，容器/k8s，微服务，CICD，虚拟计算，存储和网络等。
 - 英语：英语六级和 8 年全球化团队工作经验，能使用英语流利交流。
