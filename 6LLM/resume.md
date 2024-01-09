@@ -21,3 +21,11 @@
 2. 维护和更新正则规则库，及时扫描和发现敏感数据。
 3. 使用BiLSTM-CRF 识别文本里面的命名实体，挖掘深层敏感数据，比如地址等。
 软件环境：Pytorch, TorchCRF，Kubernetes，Docker，Java，Elasticsearch，Mysql
+
+
+Adam优化器
+ChatGLM 2代架构
+Fassi的体量
+Loara参数
+各种Embeding
+ChatGLM Lora后的参数
