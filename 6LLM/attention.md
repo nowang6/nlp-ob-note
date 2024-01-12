@@ -5,8 +5,10 @@
 全局，局部，带状
 
 ## FlashAttention
-线程独占：寄存器，共享内存
-线程共享：全局内存
+寄存器：线程访问
+共享内存：线程快访问
+全局内存（显存）：所有线程共享
+
 torch.backedn.cuda.enable_flash_sdp()
 
 ## 多查询注意力, 减少Q-K
