@@ -15,7 +15,9 @@ split -l 10000 -d -a3 train_data.csv train0 #切割文件，每个文件1万行�
 ```bash
 /etc/apt/apt.conf.d/proxy.conf
 
-mount -o loop /data/debian-12.4.0-amd64-DVD-1.iso /media/cdrom
+mount -o loop /data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd
+#/etc/apt/sources.list
+deb [trusted=yes] file:///mnt/debian-cd bookworm main contrib
 
 ```
 
@@ -25,68 +27,25 @@ mount -o loop /data/debian-12.4.0-amd64-DVD-1.iso /media/cdrom
 apt install zsh
 #将 zsh 设置为默认 Shell
 chsh -s /bin/zsh
-```
 
-安装 on my zsh
-```bash
-download ohmyzsh-master
-mv  ohmyzsh-master ~/.oh-my-zsh
-download install-oh-my-zsh.sh from https://gist.github.com/hewerthomn/65bb351bf950470f6c9e6aba8c0c04f1
+# on my sh
+mv ohmyzsh-master ~/.oh-my-zsh
+https://gist.github.com/hewerthomn/65bb351bf950470f6c9e6aba8c0c04f1
 ./install-oh-my-zsh.sh
 
-```
-
-安装主题和插件
-
-```bash
-wget --no-check-certificate  https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip
+# auto-suggestion
+https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip
 mv zsh-autosuggestions-master .oh-my-zsh/plugins/zsh-autosuggestions
 
-wget --no-check-certificate  https://github.com/romkatv/powerlevel10k/archive/refs/heads/master.zip
+# powerlevel10k
+https://github.com/romkatv/powerlevel10k/archive/refs/heads/master.zip
 mv powerlevel10k .oh-my-zsh/custom/themes/powerlevel10k
 
 Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
-
 export TERM=xterm-256color
-
 ```
 
 
-# 环境
-## 安装包
-/etc/apt/apt.conf.d/proxy.conf
-
-## 安装shell
-
-```bash
-apt install zsh
-#将 zsh 设置为默认 Shell
-chsh -s /bin/zsh
-```
-
-安装 on my zsh
-```bash
-download ohmyzsh-master
-mv  ohmyzsh-master ~/.oh-my-zsh
-download install-oh-my-zsh.sh from https://gist.github.com/hewerthomn/65bb351bf950470f6c9e6aba8c0c04f1
-./install-oh-my-zsh.sh
-
-```
-
-
-安装主题和插件
-
-```bash
-wget --no-check-certificate  https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip
-mv zsh-autosuggestions-master .oh-my-zsh/plugins/zsh-autosuggestions
-
-wget --no-check-certificate  https://github.com/romkatv/powerlevel10k/archive/refs/heads/master.zip
-mv powerlevel10k .oh-my-zsh/custom/themes/powerlevel10k
-
-```
-
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # 磁盘
@@ -95,10 +54,15 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 mkdir -p /media/cdrom
 mount -o loop /data/debian-12.4.0-amd64-DVD-1.iso /media/cdrom
 
-mkfs.ext4 -F -L "rootfs" /dev/sda1
+mkfs.ext4 -F -L "rootfs" /dev/sdb1
+mkfs.exfat -n xq_256 /dev/sdb1
+
 
 #查看磁盘UUID
 blkid /dev/sda1
+
+#/etc/fstab
+/data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd/ udf,iso9660 loop 0 0
 
 ```
 
@@ -106,11 +70,19 @@ blkid /dev/sda1
 
 # 安装
 
-```
-grub-install --removable --recheck --efi-directory=/boot/efi
+```bash
+/etc/apt/sources.list
+deb [trusted=yes] file:///mnt/debian-cd bookworm main contrib
 
 ```
 
+
+## 系统
+
+```bash
+#关闭睡眠
+ systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
 
 
 # USB
