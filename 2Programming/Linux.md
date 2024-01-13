@@ -15,9 +15,23 @@ split -l 10000 -d -a3 train_data.csv train0 #切割文件，每个文件1万行�
 ```bash
 /etc/apt/apt.conf.d/proxy.conf
 
+#查询安装的包
+dpkg-query -l
+
 mount -o loop /data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd
 #/etc/apt/sources.list
 deb [trusted=yes] file:///mnt/debian-cd bookworm main contrib
+
+snap list
+
+whereis goldendict
+
+apt show goldendict
+
+apt list --installed
+
+用于搜索包
+apt-cache
 
 ```
 
@@ -46,8 +60,6 @@ export TERM=xterm-256color
 ```
 
 
-
-
 # 磁盘
 
 ```bash
@@ -64,17 +76,12 @@ blkid /dev/sda1
 #/etc/fstab
 /data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd/ udf,iso9660 loop 0 0
 
-```
-
-
-
-# 安装
-
-```bash
-/etc/apt/sources.list
-deb [trusted=yes] file:///mnt/debian-cd bookworm main contrib
+/etc/fstab
+systemctl daemon-reload
 
 ```
+
+
 
 
 ## 系统
@@ -91,5 +98,10 @@ USB2 port 3, 4, 6
 
 
 # GPU
+```
+apt-get install build-essential
+apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
+```
 
 nvidia-smi
