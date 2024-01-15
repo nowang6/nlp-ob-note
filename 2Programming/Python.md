@@ -95,7 +95,10 @@ print(reduce(add, a))
 # 框架
 
 ## FastAPI
-pydantic
+### Starlette
+web服务器
+
+### pydantic
 数据接口定义检查与设置管理的库,  第7课
 https://www.bilibili.com/video/BV1iN411X72b?p=7&vd_source=f9f5dc62e3d675eacc7d6206b764e9eb
 
