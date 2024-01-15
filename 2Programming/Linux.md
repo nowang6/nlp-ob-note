@@ -18,11 +18,9 @@ split -l 10000 -d -a3 train_data.csv train0 #切割文件，每个文件1万行�
 #查询安装的包
 dpkg-query -l
 
-mount -o loop /data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd
 #/etc/apt/sources.list
 deb [trusted=yes] file:///mnt/debian-cd bookworm main contrib
 
-snap list
 
 whereis goldendict
 
@@ -77,7 +75,7 @@ blkid /dev/sda1
 /data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd/ udf,iso9660 loop 0 0
 
 /etc/fstab
-systemctl daemon-reload
+mount -a
 
 ```
 
@@ -98,10 +96,26 @@ USB2 port 3, 4, 6
 
 
 # GPU
-```
-apt-get install build-essential
-apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 
-```
+```bash
+vim /etc/modprobe.d/blacklist.conf
+blacklist nouveau
+
+update-initramfs -u
+
+#卸载
+apt-get remove --purge '^nvidia-.*'
+apt-get remove --purge '^libnvidia-.*'
+apt-get remove --purge '^cuda-.*'
+
+#安装
+apt-get install build-essential
+apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev vim
+
 
 nvidia-smi
+
+
+
+```
+
