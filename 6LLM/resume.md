@@ -1,6 +1,6 @@
 # 评价 
-- 自然语言处理：熟悉传统NLP技术，包括词嵌入，文本表示和 RNN/LSTM/GRU；熟练使用 huggingface 的 datasets，transformers等模块，配合预训练模型PTM完成文本分类、情感分析、命名实体识别等 NLP 任务。
-- 大语言模型：理解ChatGPT的训练方式，能使用PEFT/LoRA，DeepSpeed，LangChain，vLLM，向量数据库等工具微调大语言模型，适配下游任务。
+- 自然语言处理：熟悉传统NLP技术，包括词嵌入，文本表示，RNN/LSTM/GRU等；熟练使用 huggingface 的 datasets，transformers等模块，配合预训练模型PTM完成文本分类、情感分析、命名实体识别等 NLP 任务。
+- 大语言模型：理解大模型的训练方式，能使用PEFT/LoRA，DeepSpeed, Megatron微调大语言模型；熟悉LangChain框架和向量数据库。
 - 云计算：熟悉云原生技术，如 devops，容器/k8s，微服务，CICD，虚拟计算，存储和网络等。
 - 英语：英语六级和 8 年全球化团队工作经验，能使用英语流利交流。
 
@@ -10,7 +10,7 @@
 工作职责
 1. 收集整理历史帮助文档，建立索引，存储到数据库。
 2. 根据用户提问，提取关键信息，从帮助文档里选出匹配度高的内容，发送给用户。
-软件环境：Python, Pytorch, LangChain, Faiss, Elasticsearch, FastAPI
+软件环境：Python, Pytorch, LangChain, Milvus, Elasticsearch, FastAPI
 
 
 # 项目2
