@@ -36,7 +36,7 @@ apt-cache
 ## shell 和插件
 
 ```bash
-apt install zsh
+apt install zsh -y
 #将 zsh 设置为默认 Shell
 chsh -s /bin/zsh
 
@@ -75,6 +75,7 @@ blkid /dev/sda1
 /data/debian-12.4.0-amd64-DVD-1.iso /mnt/debian-cd/ udf,iso9660 loop 0 0
 
 /etc/fstab
+/data/debian-12.4.0-amd64-DVD-1.iso /media/cdrom auto loop 0 0
 mount -a
 
 ```
@@ -97,6 +98,8 @@ USB2 port 3, 4, 6
 
 # GPU
 
+[install link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network)
+
 ```bash
 vim /etc/modprobe.d/blacklist.conf
 blacklist nouveau
@@ -108,14 +111,25 @@ apt-get remove --purge '^nvidia-.*'
 apt-get remove --purge '^libnvidia-.*'
 apt-get remove --purge '^cuda-.*'
 
-#安装
+apt search nvidia-driver
+
+#安装依赖
 apt-get install build-essential
 apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev vim
 
+#安装
+dpkg -i cuda-keyring_1.1-1_all.deb
+add-apt-repository contribsudo apt-get update
+apt-get -y install cuda-toolkit-12-3
+apt-get install -y cuda-drivers
 
 nvidia-smi
-
-
-
+nvidia-smi topo --matrix
 ```
 
+# Nrok
+
+```
+tar -xvzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+nohup ngrok http 8080 --log=stdout > ngrok.log &
+```

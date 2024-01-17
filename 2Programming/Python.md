@@ -1,10 +1,10 @@
 # 环境
 ```
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 conda create --name llm python=3.9 -y
-conda activate d2l
-pip install torch==1.12.0
-pip install torchvision==0.13.0
-pip install d2l==0.17.6
+conda activate llm
+pip install torch transformers
+
 ```
 
 ```
@@ -201,4 +201,12 @@ df = pd.DataFrame([s,s])
    0  1  2
 0  a  b  c
 1  a  b  c
+```
+
+
+# Jupter
+```bash
+pip install jupyterlab
+
+nohup jupyter lab --ip 0.0.0.0 --port 8080 &
 ```
