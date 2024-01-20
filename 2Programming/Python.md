@@ -80,6 +80,14 @@ def add(x, y):
 print(reduce(add, a))
 ```
 
+## 参数解析
+```python
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--bert_path', help='config file', default='/home/data/tmp/bert-base-chinese')
+args = parser.parse_args()
+args.bert_path
+```
 
 ## 闭包和装饰器
 
