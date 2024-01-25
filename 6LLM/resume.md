@@ -12,7 +12,7 @@
 1. 开发VectorStore: 把pdf/markdown/html格式的语料库，切分embeeding, 保存到向量数据库。
 2. 定义规则，识别用户意图。
 3. 根据用户提问，检索知识库，生成答案，发送给用户。
-4. 对ChatGLM进行P-turing。
+4. 对ChatGLM进行微调。
 软件环境：Transformers, ChatGLM, Pytorch, LangChain, Faiss, FastAPI
 
 
