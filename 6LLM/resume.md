@@ -7,13 +7,16 @@
 
 
 # 项目1
-项目描述：公司内部有大量的IT系统，需要提供客服服务，本项目使用智能客服的方式，用历史文档和知识库作为语料库，配合大语言模型，为用户提供智能服务。
-工作职责
-1. 开发VectorStore: 把pdf/markdown/html格式的语料库，切分embeeding, 保存到向量数据库。
-2. 定义规则，识别用户意图。
-3. 根据用户提问，检索知识库，生成答案，发送给用户。
-4. 对ChatGLM进行微调。
-软件环境：Transformers, ChatGLM, Pytorch, LangChain, Faiss, FastAPI
+项目描述：公司内部有大量的IT系统，需要提供客服服务，本项目使用智能客服的方式，复用历史文档和知识库作为语料库，配合大语言模型，为用户提供智能服务。
+工作职责：
+1. 定义规则和槽位，训练模型，识别用户意图，填充槽位。询问用户意图，填充槽位。
+2. 历史文档和知识库处理: 把pdf/markdown/html格式的语料库，切分后，embedding, 构建文档和知识库的向量数据库。
+3. 根据规则和用户提问，检索向量数据库，填充Prompt模板，生成答案，发送给用户。
+4. 维护上下文的会话信息。
+5. 对ChatGLM进行微调。
+6. 使用CANN把模型转换为转换为mindspore格式， 部署到服务器。
+
+软件环境：Pytorch，RoBERTa，Transformers, ChatGLM, LangChain,  Faiss,  FastAPI
 
 
 # 项目2
