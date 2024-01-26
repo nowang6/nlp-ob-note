@@ -11,7 +11,7 @@
 
 torch.backedn.cuda.enable_flash_sdp()
 
-## 多查询注意力, 减少Q-K
+## 多查询注意力, 减少K-V
 不同的注意力头共享K和V
 
 
