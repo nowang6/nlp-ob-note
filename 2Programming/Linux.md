@@ -133,3 +133,6 @@ nvidia-smi topo --matrix
 tar -xvzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
 nohup ngrok http 8080 --log=stdout > ngrok.log &
 ```
+
+
+# Tmux 多窗口工具
