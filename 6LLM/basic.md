@@ -6,8 +6,10 @@
 ## ROUGE（Recall-Oriented Understudy for Gisting Evaluation）
 自动摘要评价指标
 
-## GLUE 
+## GLUE General Language Understanding Evaluation
 9 个 NLU 的任务， 8 个分类任务（1个三分类，7 个二分类），一个回归任务(STS-B)
+
+# Chinese Language Understanding Evaluation Benchmark(CLUE)
 
 # 模型结果
 
