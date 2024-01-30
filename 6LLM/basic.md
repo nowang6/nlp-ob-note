@@ -8,3 +8,26 @@
 
 
 ## GLUE: 多任务的句子语义理解评估平台
+9 个 NLU 的任务， 8 个分类任务（1个三分类，7 个二分类），一个回归任务(STS-B)
+
+# 模型结果
+
+## Encode Only
+BERT
+
+## Decode Only
+GPT
+Lamma
+
+
+## Encode-Decode
+T5
+
+
+# Embedding
+Leaderboard: https://huggingface.co/spaces/mteb/leaderboard
+
+
+## bge智源
+bpe是Byte Pair Encoding， transfomers里的子词切分算法
+https://blog.csdn.net/v_JULY_v/article/details/135311471
