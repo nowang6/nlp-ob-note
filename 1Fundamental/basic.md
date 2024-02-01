@@ -14,6 +14,5 @@
 
 ## Relu
 
-## Softmax SigMoid的变体 多分类问题
 
 ## SwiGLU
