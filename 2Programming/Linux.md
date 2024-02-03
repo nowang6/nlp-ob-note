@@ -1,4 +1,5 @@
 
+10+年java和python开发经验
 # 文本处理命令
 
 ```bash
@@ -115,7 +116,7 @@ apt search nvidia-driver
 
 #安装依赖
 apt-get install build-essential
-apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev vim
+apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev vim curl
 
 #安装
 dpkg -i cuda-keyring_1.1-1_all.deb
@@ -136,3 +137,27 @@ nohup ngrok http 8080 --log=stdout > ngrok.log &
 
 
 # Tmux 多窗口工具
+
+
+
+# docker
+
+```bash
+apt-get update
+apt-get install ca-certificates curl
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt-get update
+
+
+apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+```

@@ -32,3 +32,47 @@ Leaderboard: https://huggingface.co/spaces/mteb/leaderboard
 ## bge智源
 bpe是Byte Pair Encoding， transfomers里的子词切分算法
 https://blog.csdn.net/v_JULY_v/article/details/135311471
+
+
+
+
+# In-Context Leaning
+
+![[Pasted image 20240203101100.png|500]]
+
+
+
+# Chain of thought
+
+
+
+
+# SFT Supervised Fine-Tuning
+
+监督式微调
+
+
+
+# RLHF Reinforcement Learning from Human Feedback
+
+
+
+# 微调
+
+## P-Tuning
+P=prompt
+只对输入层进行训练，训练Soft prompts
+
+##  Prefix-Tuning
+在模型的每一个解码步骤前添加可以学习的向量
+
+
+## Adapter 
+
+更老
+
+## LoRA
+
+
+## LoRA Hub
+
