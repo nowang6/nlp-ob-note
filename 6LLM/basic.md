@@ -35,7 +35,6 @@ https://blog.csdn.net/v_JULY_v/article/details/135311471
 
 
 
-
 # In-Context Leaning
 
 ![[Pasted image 20240203101100.png|500]]
@@ -76,3 +75,10 @@ P=prompt
 
 ## LoRA Hub
 
+=======
+# 模型
+## LLaMA
+- 前置层归一化 Pre-Layer-Norm
+- 使用RMSNorm函数
+- 激活函数从ReLU替换为SwiGLU
+- 位置编码从正余弦函数变为旋转位置编码（Rotary Position Embeeding）RoPE
