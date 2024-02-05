@@ -94,3 +94,9 @@ RMS Norm是一般LayerNorm的一种变体，可以在梯度下降时令损失更
 
 ## SwiGLU
 
+# 位置编码
+## 正余弦函数
+
+## 旋转位置编码
+https://spaces.ac.cn/
+
