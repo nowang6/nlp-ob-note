@@ -87,3 +87,6 @@ for sentence, ppl in zip(sentences, ppls):
   print('"{}"这句话的困惑度为: {}'.format(sentence, ppl))
 
 ```
+
+# 最小Hash MiniHas算法
+计算Jaccard相似度
