@@ -44,3 +44,46 @@ for keyword in keywords:
 result = index.query(text)
 print(result)
 ```
+
+# 计算困惑度
+```python
+import torch
+from transformers import BertTokenizer, GPT2LMHeadModel
+import torch.nn as nn
+from transformers.models.gpt2.modeling_gpt2 import GPT2LMHeadModel
+
+model_path = "Dgpt2-chinese-cluecorpussmall"
+tokenizer = BertTokenizer.from_pretrained(model_path)
+model = GPT2LMHeadModel.from_pretrained(model_path)
+
+sentences = ["今天是个好日子。", "天今子日。个是好", "这个婴儿有900000克呢。", "我不会忘记和你一起奋斗的时光。","我不会记忘和你一起奋斗的时光。", "会我记忘和你斗起一奋的时光。"]
+inputs = tokenizer(sentences, padding= 'max_length', max_length= 50, truncation= True, return_tensors= "pt")
+inputs.keys()
+sec_size, seq_len = inputs['input_ids'].size()
+print(sec_size, seq_len)
+
+outputs = model(**inputs, labels=inputs['input_ids'])
+logits = outputs["logits"]
+logits.shape
+
+# 错位构造logits和label
+# 后续可用于计算交叉熵损失
+shift_logits = logits[:, :- 1, :].contiguous()
+shift_labels = inputs['input_ids'][:, 1:].contiguous()
+shift_attentions = inputs['attention_mask'][:, 1:].contiguous()
+print(logits.shape)
+print(shift_logits.shape)
+
+# reshape成(bs*sl, vocab_size)
+loss_fct = nn.CrossEntropyLoss(ignore_index= 0, reduction= "none")
+loss = loss_fct(shift_logits.view(- 1, shift_logits.size(- 1)), shift_labels. view(- 1)).detach().reshape(sec_size, - 1)
+loss. shape
+
+meanloss = loss.sum(1) / shift_attentions.sum(1)
+meanloss. shape
+
+ppls = torch.exp(meanloss).numpy().tolist()
+for sentence, ppl in zip(sentences, ppls):
+  print('"{}"这句话的困惑度为: {}'.format(sentence, ppl))
+
+```
