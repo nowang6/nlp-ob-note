@@ -100,3 +100,7 @@ RMS Norm是一般LayerNorm的一种变体，可以在梯度下降时令损失更
 ## 旋转位置编码
 https://spaces.ac.cn/
 
+# 对比学习
+ConSERT
+SimCSE
+
