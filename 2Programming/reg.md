@@ -18,3 +18,24 @@ regex = re.compile(regex)
 result = re.findall(regex, text)
 print(result)
 ```
+
+# AC自动机
+pip install esmre
+```python
+import esm
+# 词库
+keywords = ["保罗", "小卡", "贝弗利"]
+# 连续文本
+text = "NBA季后赛西部决赛，快船与太阳移师洛杉矶展开了他们系列赛第三场较量，上一场太阳凭借艾顿的空接绝杀惊险胜出，此役保罗火线复出"
+
+
+# 实例化AC自动机
+index = esm.Index()
+# 将词库中的词送入index实例
+for keyword in keywords:
+  index.enter(keyword)
+  index.fix()
+# 针对连续文本进行匹配
+result = index.query(text)
+print(result)
+```
