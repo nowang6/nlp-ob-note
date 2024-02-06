@@ -1,2 +1,20 @@
 正则练习
 https://alf.nu/RegexGolf?world=regex&level=r00
+
+# 匹配findall
+```python
+import re
+# 给定文本
+text = "请问如何写一个普通的正则表达式？请问怎么使用python3实现正则表达式？"
+# 提前编译正则表达式
+# 匹配数字
+regex = r'\w'
+# 匹配任意字
+# regex = '请问.'
+# 从字符串的最开始进行匹配
+# 脱字符
+# regex = '^请问.'
+regex = re.compile(regex)
+result = re.findall(regex, text)
+print(result)
+```
