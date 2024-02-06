@@ -20,6 +20,7 @@ print(result)
 ```
 
 # AC自动机
+一次遍历，匹配多个规则
 pip install esmre
 ```python
 import esm
