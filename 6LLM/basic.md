@@ -104,3 +104,10 @@ https://spaces.ac.cn/
 ConSERT
 SimCSE
 
+# 其他
+
+## 打印模型参数
+```python
+for name,param in model.named_parameters():
+  print(name,param.dtype)
+```
