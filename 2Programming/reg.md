@@ -21,7 +21,11 @@ print(result)
 
 # AC自动机
 一次遍历，匹配多个规则
+
 pip install esmre
+
+linux系统下
+windows下需要VC++
 ```python
 import esm
 # 词库
