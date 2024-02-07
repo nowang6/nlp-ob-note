@@ -104,6 +104,11 @@ https://spaces.ac.cn/
 ConSERT
 SimCSE
 
+# 上下文扩展
+
+YaRN
+RoPE
+
 # 其他
 
 ## 打印模型参数
