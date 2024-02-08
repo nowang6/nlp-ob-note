@@ -2,7 +2,6 @@
 
 ## SigMoid 二分类
 
-
 ## SoftMax 多分类
 
 
