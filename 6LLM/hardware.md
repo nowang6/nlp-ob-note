@@ -4,7 +4,12 @@
 
 
 # 英伟达
-cuDNN：（CUDA Deep Neural Network library）GPU加速库
+CuDNN：（CUDA Deep Neural Network library）GPU加速库
 TensorRT： 深度学习推理引擎
+
+
+# 昇腾
+
+CANN Compute Architecture for Neural Networks 异构计算架构， 是对标CuDNN
 
 
