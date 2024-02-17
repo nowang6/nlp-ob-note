@@ -12,4 +12,8 @@ TensorRT： 深度学习推理引擎
 
 CANN Compute Architecture for Neural Networks 异构计算架构， 是对标CuDNN
 
+# 微软
+
+ONNX Runtime 推理框架支持CPU，GPU，TensorRT，DML
+
 
