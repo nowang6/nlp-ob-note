@@ -222,4 +222,12 @@ nohup jupyter lab --ip 0.0.0.0 --port 8080 &
 # 并发编程
 ## 并发 vs  并行
 并发：同一时刻，只有一个thread/task执行，thread对应threading库， task对应asyncio库， 应用于I/O操作频繁的场景， 比如爬虫。
+
 并行：使用multi-processing启动多个进程，应用于CPU heavy的场景。
+
+### 使用原则
+如果是I/O bound，并且I/O操作很慢，需要很多任务/线程协同实现，那么使用Asyncio更合适。
+
+如果是I/O bound，但是I/O操作很快，只需要有限数量的任务/线程，那么使用多线程Threading就可以了。
+
+如果是CPU bound，则需要使用多进程来提高程序运行效率
