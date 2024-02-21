@@ -13,7 +13,7 @@ MLM：Mask Language Model
 Next Sentence Prediction（NSP）
 
 
-# ALBERT
+# ALBERT 轻量级BERT
 
 ALBERT针对BERT的修改主要有两点，
 
@@ -22,7 +22,17 @@ ALBERT针对BERT的修改主要有两点，
 - **NSP任务更改为SOP任务**,  句子顺序预测
 
 # RoBERT
+训练时间更长，batch size更大，数据更多
+删除了 NSP
+动态MASK
+
 ![[Pasted image 20240106170104.png]]
 The key differences introduced by RoBERTa are:
 - Removing the next sentence prediction task from pre-training (binary-classification task of predicting whether two sentences are a pair from the same text).
 - Using dynamic masking instead of static masking.
+
+
+# 训练
+batch size: 32
+学习率：bert本身10的-5次方，添加的层10的-3次方
+epoches：2，3，4

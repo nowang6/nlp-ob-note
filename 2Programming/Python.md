@@ -218,3 +218,8 @@ pip install jupyterlab
 
 nohup jupyter lab --ip 0.0.0.0 --port 8080 &
 ```
+
+
+# PDF解析
+
+![[Pasted image 20240208180623.png]]

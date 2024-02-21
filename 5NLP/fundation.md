@@ -1,3 +1,39 @@
+# 评价
+正例数量 << 反例数量
+![[Pasted image 20240218195752.png|600]]
+![[Pasted image 20240218195852.png|600]]
+## Accuracy 准确率 
+not Enough
+
+```python
+>>> accuracy_metric = evaluate.load("accuracy") 
+>>> results = accuracy_metric.compute(references=[0, 1], predictions=[0, 1]) 
+>>> print(results) {'accuracy': 1.0}
+```
+## Percision精准率/精确率/查准率
+分母： TP
+分子：TP+FP
+正例预测对1个，反例预测错2个，精准率33%
+```python
+precision_metric = evaluate.load("precision")
+results = precision_metric.compute(references=[1, 1, 0, 0, 0, 0, 0], predictions=[1, 0, 1, 1, 0, 0, 0])
+print(results)
+```
+## Recall  召回率
+分母： TP
+分子：TP+FN
+ 一共2个正例，预测正确1个，召回率为50%
+```python
+recall_metric = evaluate.load('recall')
+results = recall_metric.compute(references=[1, 1, 0, 0, 0, 0], predictions=[1, 0, 1, 1, 0, 0])
+print(results)
+```
+
+## F1
+https://huggingface.co/spaces/evaluate-metric/f1
+
+
+
 CRF: https://www.julyedu.com/video/play/351/9777
 
 # 场景
@@ -7,6 +43,7 @@ CRF: https://www.julyedu.com/video/play/351/9777
 
 ## 命名实体识别
 
+数据集：人民日报，微软亚洲研究院
 ## 关系抽取
 
 ## 知识图谱

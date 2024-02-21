@@ -30,6 +30,11 @@ T5
 
 # Embedding
 Leaderboard: https://huggingface.co/spaces/mteb/leaderboard
+## MTEB: Massive Text Embedding Benchmark(海量⽂本嵌⼊基准)
+https://huggingface.co/spaces/mteb/leaderboard
+
+
+## C-MTEB
 
 
 ## bge智源

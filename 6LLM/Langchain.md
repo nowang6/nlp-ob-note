@@ -11,10 +11,6 @@ https://github.com/sxu-nlp/ECISA2021
 
 # 开源
 
-
 https://github.com/langgenius/dify  1.9k
 https://github.com/labring/FastGPT 2.1k
-
 https://github.com/chatchat-space/Langchain-Chatchat 3.8k
-
-[7285c4c8ab0ba8b6dfa95bc20abd30fd752f6b0fe5f4d9f3](http://127.0.0.1:8080/lab?token=7285c4c8ab0ba8b6dfa95bc20abd30fd752f6b0fe5f4d9f3)
