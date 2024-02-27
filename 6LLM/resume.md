@@ -28,24 +28,8 @@
 **软件环境：**Pytorch，TorchCRF，Kubernetes，Docker，Java，Elasticsearch，Mysql
 
 
+LongQLoRA
 
-# 介绍
-
-My name is Norman.  I graduated from Southwest University, majored in Software Engineering.  
-
-I have been woking in IT industry for 15 years， served 3 company,  about 5 years for each company.
-
-For the first 10 years, I had been working as Java developer in the global team, and can comunicate with people from different culture.
-
-My career in AI began from Huawei Cloud in the year 2019, when we have a special requirement, we need to use NLP to identify sensitive data on he cloud. We used LSTM and some public data to train our model and identity those sensitive data.
-
-Currently I am working as a tech leader for an intelligent customer service  platform,  this platform utilized existing document to answer end-users' question.
-this platform's business user is each IT system administrator,  who can create a chat robot on our platform and then upload their document, we use our model to embeeding thoes document, and save to a vector database, when the end user want to quey some information, we used thoes question to search in the vector database and recall the document and then send to LLM for answering.  We used ChatGLM 6 billon model, and did  some fine tuning.
-
-During these projects, I have accumulated extensive knowledge and experience for NLP and LLM.
-
-As for my life, I am a father of two children, who are living in Chengdu. 
-My hobby is riding bicle. I enjoyed spending my spare time with my family.
 
 
 
