@@ -44,9 +44,11 @@ P(Black and BoxA)= P(Black | BoxA) * P(BoxA) = 3/7 * 7/16
 
 # 信息论
 
-## 交叉熵
+## 交叉熵CrossEntropy Loss
 - KL散度 = 交叉熵 - 熵
 - 交叉熵永远大于熵，因为KL散度永远大于等于零
-CrossEntropy Loss
+- 最大似然估计跟交叉熵是对等的
+
 
 ## KL散度(相对熵)
+衡量2个概率分布的差异，当2个概率分布完全相等时，KL散度为0
