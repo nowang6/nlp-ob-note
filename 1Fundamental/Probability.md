@@ -45,4 +45,6 @@ P(Black and BoxA)= P(Black | BoxA) * P(BoxA) = 3/7 * 7/16
 # 信息论
 
 ## 交叉熵
+- KL散度 = 交叉熵 - 熵
+- 交叉熵永远大于熵，因为KL散度永远大于等于零
 CrossEntropy Loss
