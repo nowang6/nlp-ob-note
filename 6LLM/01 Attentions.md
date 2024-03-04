@@ -1,12 +1,6 @@
 
+# 优化的几种方式
 
-![[Pasted image 20231226213351.png]]
-
-
-![[Pasted image 20231226213542.png]]
-
-
-# Attention机制的优化
 稀疏注意力：限制查询Q-键K对
 Flash Attention: 显存和缓存优化
 多查询注意力：不同头共享键K-值V组合
@@ -15,12 +9,39 @@ Flash Attention: 显存和缓存优化
 
 分组查询注意力: Llama 2 也使用了该技术，其通过缓存先前解码的词元的键向量和值向量来优化推理过程 (减少处理时间)。
 
+## 稀疏注意力减少Q-K
+基于位置的注意力机制
+全局，局部，带状
+
+## FlashAttention
+寄存器：线程访问
+共享内存：线程快访问
+全局内存（显存）：所有线程共享
+
+torch.backedn.cuda.enable_flash_sdp()
+
+## 多查询注意力, 减少K-V
+不同的注意力头共享K和V
 
 
-# Subword算法
+## 滑动窗口注意力mistral
 
-## BPE
-从基本词汇表中选择组合在一起出现频次最高的两个符号中，并将其合成一个新的符号，加入基础词汇表，直到达到提前设定好的词汇量为止（词汇表大小是超参数）
+
+# 注意力架构
+
+| 架构        | 设计者                                               | 特点                                     | 链接                                                                                                   |
+| ----------- | ---------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Transformer | Google                                               | 最流行，几乎所有大模型都用它             | [OpenAI 的代码](https://github.com/openai/finetune-transformer-lm/blob/master/train.py)                |
+| RWKV        | [PENG Bo](https://www.zhihu.com/people/bopengbopeng) | 可并行训练，推理性能极佳，适合在端侧使用 | [官网](https://www.rwkv.com/)、[RWKV 5 训练代码](https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v5) |
+| Mamba       | CMU & Princeton University                           | 性能更佳，尤其适合长文本生成             | [GitHub](https://github.com/state-spaces/mamba)                                                        |
+
+
+
+
+
+
+
+
 
 # PE Position Encode位置编码
 ## 三角函数

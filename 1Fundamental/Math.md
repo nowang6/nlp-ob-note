@@ -1,9 +1,7 @@
-
 # 实数和复数
 
 形如a+bi（a、b均为实数）的数为复数，其中，a被称为实部，b被称为虚部，i为虚数单位。
 i的平方等于-1
-
 
 # 微积分
 ## 定积分
@@ -18,101 +16,41 @@ t表示时间，v表示速度，面积表示这段时间行驶的距离
 ![xx|500](20230827132608.png)
 
 
-
-
-
-# 概率论
-
-## 条件概率
-![[Pasted image 20230910215215.png]]
-
-
-## 贝叶斯公式
-
-![[Pasted image 20230910215138.png]]
-
-
-
-## 高斯概率密度函数
-
-![[Pasted image 20230910203403.png]]
-
-
-## 条件概率和贝叶斯
-
-A盒子：3黑，一共7
-B 盒子：1黑，一共9
-
-P(Black|BoxA):  已知巧克力来自A盒，请问黑色的概率
-P(BoxA):  巧克力来自A盒的概率
-P(Black and BoxA):  巧克力来自A盒，并且是黑色的概率
-![[ml-1.png|500]]
-已知来自A盒，黑色的概率？
-![[ml-2.png|200]]
-
-```
-已知是黑色，来自A盒的概率？
-P(BoxA | Black): 已知黑色，来自A盒的概率
-P(Black):  黑色的概率, 全概率公式， 3/7*7/16 + 1/9 * 9/16
-P(Black and BoxA)= P(Black | BoxA) * P(BoxA) = 3/7 * 7/16
-```
-
-![[ml-3.png|300]]
-
-
-![[ml-4.png|200]]
-
-
-
-# 信息论
-
-## 交叉熵
-CrossEntropy Loss
-
-
-# 函数
-
-### Sigmoid函数 (0,1)之间
-它的导数，正态分布
-
-$\frac{1} {1 + e^(-x) }$
-
+## 微积分
+x（向量）是叶子节点，z（向量）是中间节点，y（标量）是输出节点
+Tensor的属性，requires_grad， grad微分值，grad_fn微分函数
+- 当叶子节点的requires_grad为True时，信息流过该节点，所有中间节点的requires_grad都变为true
+- 只要在输出节点调用backward(), Pytorch就会自动更新叶子节点的微分值，存储在叶子节点的grad属性里
+- 只有叶子节点的grad属性能被更新
+### 梯度-前向传播
 ```python
-def sigmoid(x):  
-    return 1/(1 + np.exp(-x))
-
-x = np.linspace(-10, 10, 100)  
-y = sigmoid(x)  
-plt.plot(x, y)  
-plt.xlabel("x")  
-plt.ylabel("Sigmoid(X)")  
-plt.show()
-
+x = torch.ones(2)
+x.requires_grad=True
+z= 4*x
+tensor([4., 4.], grad_fn=<MulBackward0>) # tensor是一个矢量
+y=z.norm()
+tensor(5.6569, grad_fn=<LinalgVectorNormBackward0>) # tensor是一个标量
 ```
-
-## tanh函数取值（-1，1）
-, 多用于循环神经网络
+### 梯度-反向传播
+tensor做计算都会产生计算图，用于反向传播，计算梯度
 ```python
-x = np.linspace(-10, 10, 100)
-y = np.tanh(x)
-plt.plot(x, y)
-plt.show()
+x.backward() # 报错grad can be implicitly created only for scalar outputs， 只能作用于标量
+y.backward()
+x.grad
+tensor([2.8284, 2.8284])
+z.grad
+y.grad
 ```
 
+计算函数y=x*x的梯度
+```python
+a = torch.arange(-3,4, dtype=torch.float32)
+a.requires_grad = True
+b = a * a
+c = b.norm()
+c.backward()
 
-## softmax函数
-多用于分类
-``` python
-def softmax(x):
-	e_x = np.exp(x)
-	return e_x / e_x.sum(axis=0)
-	
-x = np.array([1.0, 2.0, 3.0])
-softmax_x = softmax(x)
-print(softmax_x)
-
+print(a.grad)
+tensor([-3.8571, -1.1429, -0.1429,  0.0000,  0.1429,  1.1429,  3.8571]) # 在0点的梯度为0， 2边梯度逐渐变大
 ```
-
-## 似然估计
-### 对数似然
-把概率的乘积转换为加法
+**backward() 只能作用于标量，如果是矢量，需要增加一个参数gradient, gradientde的形状跟输出节点的形状保持一致，而且元素均值为1**

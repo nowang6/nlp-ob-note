@@ -14,19 +14,6 @@
 
 # Chinese Language Understanding Evaluation Benchmark(CLUE)
 
-# 模型结果
-
-## Encode Only
-BERT
-
-## Decode Only
-GPT
-Lamma
-
-
-## Encode-Decode
-T5
-
 
 # Embedding
 Leaderboard: https://huggingface.co/spaces/mteb/leaderboard
@@ -40,7 +27,6 @@ https://huggingface.co/spaces/mteb/leaderboard
 ## bge智源
 bpe是Byte Pair Encoding， transfomers里的子词切分算法
 https://blog.csdn.net/v_JULY_v/article/details/135311471
-
 
 
 # In-Context Leaning
@@ -83,7 +69,6 @@ P=prompt
 
 ## LoRA Hub
 
-=======
 # 模型
 ## LLaMA
 - 前置层归一化 Pre-Layer-Norm
@@ -94,7 +79,7 @@ P=prompt
 
 # 归一化
 ## RMSNorm函数
-RMS Norm是一般LayerNorm的一种变体，可以在梯度下降时令损失更加平滑，与layerNorm相比，RMS Norm的主要区别在于去掉了减去均值的部分(re-centering)，只保留方差部分(re-scaling)
+
 
 
 # 激活函数

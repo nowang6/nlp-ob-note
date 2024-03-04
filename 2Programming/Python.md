@@ -4,7 +4,6 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 conda create --name llm python=3.9 -y
 conda activate llm
 pip install torch transformers
-
 ```
 
 ```
@@ -230,3 +229,24 @@ nohup jupyter lab --ip 0.0.0.0 --port 8080 &
 如果是I/O bound，但是I/O操作很快，只需要有限数量的任务/线程，那么使用多线程Threading就可以了。
 
 如果是CPU bound，则需要使用多进程来提高程序运行效率
+
+
+# Pytorch 
+
+
+## 工具
+wisdom 可视化工具
+np.meshgrdi
+## 变量
+tensor不能反向传播，variable可以反向传播
+## Tensor (张量)
+
+
+## Variable（变量）
+variable(废弃)是封装了tensor并提供自动求导功能的对象
+```python
+from torch.autograd import Variable
+
+```
+
+
