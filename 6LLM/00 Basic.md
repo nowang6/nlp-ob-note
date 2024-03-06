@@ -14,12 +14,10 @@
 
 # Chinese Language Understanding Evaluation Benchmark(CLUE)
 
-
-# Embedding
+# 词嵌入Embedding
 Leaderboard: https://huggingface.co/spaces/mteb/leaderboard
 ## MTEB: Massive Text Embedding Benchmark(海量⽂本嵌⼊基准)
 https://huggingface.co/spaces/mteb/leaderboard
-
 
 ## C-MTEB
 
@@ -27,26 +25,6 @@ https://huggingface.co/spaces/mteb/leaderboard
 ## bge智源
 bpe是Byte Pair Encoding， transfomers里的子词切分算法
 https://blog.csdn.net/v_JULY_v/article/details/135311471
-
-
-# In-Context Leaning
-
-![[Pasted image 20240203101100.png|500]]
-
-
-
-# Chain of thought
-
-
-
-
-# SFT Supervised Fine-Tuning
-
-监督式微调
-
-
-
-# RLHF Reinforcement Learning from Human Feedback
 
 
 
@@ -61,7 +39,6 @@ P=prompt
 
 
 ## Adapter 
-
 更老
 
 ## LoRA
@@ -76,16 +53,26 @@ P=prompt
 - 激活函数从ReLU替换为SwiGLU
 - 位置编码从正余弦函数变为旋转位置编码（Rotary Position Embeeding）RoPE
 
-
 # 归一化
 ## RMSNorm函数
 
 
 
 # 激活函数
+## Sigmoid/Logistic/逻辑函数
+$$
+σ(x) = \frac{1}{1 + e^{-x}}
+$$
+
+
 ## ReLU
 
+
 ## SwiGLU
+f(x) = x * sigmoid(βx)
+- β 趋近于0 时，Swish 函数趋近于线性函数y = x
+- 当β 趋近于无穷大时，Swish 函数趋近ReLU激活函数
+- β 取值为1 时，Swish 函数是光滑且非单调。模型一般使用这个值
 
 # 位置编码
 ## 正余弦函数
@@ -101,11 +88,3 @@ SimCSE
 
 YaRN
 RoPE
-
-# 其他
-
-## 打印模型参数
-```python
-for name,param in model.named_parameters():
-  print(name,param.dtype)
-```
