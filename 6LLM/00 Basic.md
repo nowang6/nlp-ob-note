@@ -22,12 +22,6 @@ https://huggingface.co/spaces/mteb/leaderboard
 ## C-MTEB
 
 
-## bge智源
-bpe是Byte Pair Encoding， transfomers里的子词切分算法
-https://blog.csdn.net/v_JULY_v/article/details/135311471
-
-
-
 # 微调
 
 ## P-Tuning
@@ -41,20 +35,6 @@ P=prompt
 ## Adapter 
 更老
 
-## LoRA
-
-
-## LoRA Hub
-
-# 模型
-## LLaMA
-- 前置层归一化 Pre-Layer-Norm
-- 使用RMSNorm函数
-- 激活函数从ReLU替换为SwiGLU
-- 位置编码从正余弦函数变为旋转位置编码（Rotary Position Embeeding）RoPE
-
-# 归一化
-## RMSNorm函数
 
 
 
@@ -88,3 +68,12 @@ SimCSE
 
 YaRN
 RoPE
+ALiBi位置编码具备良好的外推性
+
+# 归一化
+
+## LayerNorm
+
+## RMSNoram
+对LayerNorm进行简化，去除了计算均值进行平移
+
