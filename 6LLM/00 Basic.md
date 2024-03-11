@@ -1,11 +1,5 @@
 # 评估指标
 
-## BLEU Bilingual Evaluation Understudy
-翻译评估, 衡量模型生成的文本与一组参考文本的相似度
-
-## METEOR（Metric for Evaluation of Translation with Explicit ORdering）
-在解决早期自动评价指标（如BLEU）存在的一些局限性，特别是在更好地与人类评价结果对齐方面
-
 ## ROUGE（Recall-Oriented Understudy for Gisting Evaluation）
 自动摘要评价指标， 也可以用于对话模型
 
@@ -13,6 +7,14 @@
 9 个 NLU 的任务， 8 个分类任务（1个三分类，7 个二分类），一个回归任务(STS-B)
 
 # Chinese Language Understanding Evaluation Benchmark(CLUE)
+
+## BLEU Bilingual Evaluation Understudy
+翻译评估, 衡量模型生成的文本与一组参考文本的相似度
+
+## METEOR（Metric for Evaluation of Translation with Explicit ORdering）
+在解决早期自动评价指标（如BLEU）存在的一些局限性，特别是在更好地与人类评价结果对齐方面
+
+
 
 # 词嵌入Embedding
 Leaderboard: https://huggingface.co/spaces/mteb/leaderboard
