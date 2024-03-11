@@ -78,7 +78,7 @@ ALiBi位置编码具备良好的外推性
 对LayerNorm进行简化，去除了计算均值进行平移
 
 
-# RLHF
+# RLHF框架
 - Deepspeed Chat
 - Transformer Reinforcement Learning
 - PaLM-RLHF
