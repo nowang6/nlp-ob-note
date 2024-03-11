@@ -39,6 +39,16 @@ torch.backedn.cuda.enable_flash_sdp()
 | Mamba       | CMU & Princeton University                           | 性能更佳，尤其适合长文本生成             | [GitHub](https://github.com/state-spaces/mamba)                                                        |
 
 
+## Decode-Only / Cacsual Decoder-Only
+有良好的扩展性和Zeo-Shot性能
+CPT, LlaMA
+
+## Prefix-Decoder / Non - Causal Decoded - Only
+输入双向注意力，输出为单向自注意力
+GLM
+
+
+## Encode - Decode
 
 
 
