@@ -42,6 +42,10 @@ P(Black and BoxA)= P(Black | BoxA) * P(BoxA) = 3/7 * 7/16
 
 
 
+
+yanqiangmiffy
+
+
 # 信息论
 
 ## 交叉熵
