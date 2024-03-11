@@ -1,17 +1,32 @@
 
+
+
+**通常K和V是同源的**
+
+# 注意力的几种方式
+## 自注意力
+q, k, v都是同源的
+
+
+
 # 优化的几种方式
 
-稀疏注意力：限制查询Q-键K对
-Flash Attention: 显存和缓存优化
-多查询注意力：不同头共享键K-值V组合
 
-滑窗注意力: 用基于滑动窗口的注意力替换完整注意力 (平方级计算成本)，其中每个词元最多可以关注上一层的 4096 个词元 (线性计算成本)。这样，多层以后，Mistral 7B 的实际关注词元数会叠加，因此更高层的注意力实际关注的总历史词元数会超过 4096。
+## 原始形式：多头注意力 MHA
 
-分组查询注意力: Llama 2 也使用了该技术，其通过缓存先前解码的词元的键向量和值向量来优化推理过程 (减少处理时间)。
+问题
+- 训练过程：不会显著影响
+- 推理过程：反复加载巨大的 KV Cache
 
-## 稀疏注意力减少Q-K
-基于位置的注意力机制
-全局，局部，带状
+## 多查询注意力MQA
+不同的注意力头共享K和V, 减少KV Cache大小
+ChatGLM
+
+
+## 分组查询注意力GQA
+MHA和MQA的折中，一般分为4组或8组
+GQA
+
 
 ## FlashAttention
 寄存器：线程访问
@@ -20,11 +35,6 @@ Flash Attention: 显存和缓存优化
 
 torch.backedn.cuda.enable_flash_sdp()
 
-## 多查询注意力, 减少K-V
-不同的注意力头共享K和V
-
-
-## 滑动窗口注意力mistral
 
 
 # 注意力架构
@@ -36,6 +46,16 @@ torch.backedn.cuda.enable_flash_sdp()
 | Mamba       | CMU & Princeton University                           | 性能更佳，尤其适合长文本生成             | [GitHub](https://github.com/state-spaces/mamba)                                                        |
 
 
+## Decode-Only / Cacsual Decoder-Only
+有良好的扩展性和Zeo-Shot性能
+CPT, LlaMA
+
+## Prefix-Decoder / Non - Causal Decoded - Only
+输入双向注意力，输出为单向自注意力
+GLM
+
+
+## Encode - Decode
 
 
 
@@ -44,43 +64,12 @@ torch.backedn.cuda.enable_flash_sdp()
 
 
 # PE Position Encode位置编码
-## 三角函数
-## 旋转位置编码
+## 三角函数 / 绝对位置编码
+外推能力有限
+考虑了每个token的绝对位置，忽略了token之间的相对位置。与当前位置相邻的token往往在语义上更相关。
+
+## 旋转位置编码 / 相对位置编码
+通过线性插值等方法，无须重新预训练，就能扩展上下文长度。
 
 
 
-# Transfomers
-## Transfomers的意义
-Transforme它于2017年由Google的论文《Attention is All You Need》中提出。主要有意向创新点
-1. 自注意机制：它允许模型在处理序列数据时直接计算序列中任意两个位置之间的依赖关系，无需像传统RNN和CNN那样逐步传递信息或依赖固定大小的窗口。**自注意力操作本身并不涉及元素在序列中的位置信息，它只关注元素间的关系，而不是它们的相对或绝对位置**
-2. 多头注意力：Transformer可以从不同的表示子空间捕获丰富的信息，增强了模型的表示能力。
-3. 位置编码：
-4. 并行处理能力：
-5. 灵活的架构：可以堆叠。
-
-## Transfomers的影响和局限
-1. 预训练模型的兴起。
-2. 大模型。
-3. CV领域
-
-## 问题：
-1. 计算资源要求高
-2. 长序列处理能力。
-
-
-## Transfomer结构
-Transformer模型的结构是基于编码器-解码器（Encoder-Decoder）架构的，旨在处理序列到序列（seq2seq）的任务，如机器翻译。
-
-### 编码器（Encoder）
-编码器由N个相同的层堆叠而成（典型的N值为6）。每一层包含两个主要的子层：
-- 自注意力层（Self-Attention Layer）：这个层允许每个位置的输入序列在编码时考虑到序列中的其他所有位置，从而捕获了序列内的全局依赖关系。
-- 前馈神经网络（Feed-Forward Neural Network）：对自注意力层的输出进行处理的一个全连接的前馈网络。每个位置都会使用相同的前馈网络，但是它们不共享参数。
-每个子层之前都有残差连接（Residual Connection），并且每个子层的输出都会进行层归一化（Layer Normalization）。
-
-
-## 解码器（Decoder）
-- 遮蔽自注意力层（Masked Self-Attention Layer）：与编码器中的自注意力层类似，但添加了遮蔽（Masking）以确保位置只能依赖于之前的位置，这对于预防信息泄露至解码器尚未生成的部分至关重要。
-- 编码器-解码器注意力层（Encoder-Decoder Attention Layer）：这个层使解码器能够关注（Attention）到编码器的输出。具体来说，解码器的查询（Q）来自于前一个解码器层的输出，而键（K）和值（V）来自于编码器的输出。
-- 前馈神经网络：与编码器中的前馈网络相同，但参数是独立的。
-
-解码器的每个子层同样使用了残差连接和层归一化

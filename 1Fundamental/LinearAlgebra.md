@@ -144,3 +144,9 @@ res = torch.norm(a-b)
 
 # 资料
 https://mp.weixin.qq.com/s/zOp7JvpmQDToCUHEcmokyw
+
+
+# 其他
+
+## 共现矩阵 / co-occurrence matrix
+
