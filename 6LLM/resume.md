@@ -9,3 +9,5 @@ Student ID:  111447744
 cuEduPersonUUID:  200256866 
 Principal name:  niwa5432@colorado.edu 
 User ID:  niwa5432 
+bcxy63323200@outlook.com
+krAUd251KU0YbaBw
