@@ -7,8 +7,9 @@ https://github.com/yizhongw/self-instruct
 # BelleGroup
 train_0.5M_CN
 
-# 数据自动化gouj
+# 数据自动化
 - self-instuct
 - Self-Align
 - Self-Chat
-- Self-QA
+- Self-QA https://arxiv.org/pdf/2305.11952.pdf
+  
