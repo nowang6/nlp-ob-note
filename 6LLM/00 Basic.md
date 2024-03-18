@@ -62,9 +62,7 @@ f(x) = x * sigmoid(βx)
 ## 旋转位置编码
 https://spaces.ac.cn/
 
-# 对比学习
-ConSERT
-SimCSE
+
 
 # 上下文扩展
 

@@ -12,4 +12,7 @@ train_0.5M_CN
 - Self-Align
 - Self-Chat
 - Self-QA https://arxiv.org/pdf/2305.11952.pdf
+
+
+#  阿里Data-Juicer
   

@@ -1,3 +1,4 @@
+vast.ai
 
 # 文本处理命令
 
@@ -98,6 +99,22 @@ USB2 port 3, 4, 6
 
 # GPU
 
+```bash
+pip install torch
+#i
+
+pip install flash_attn
+
+pip install bitsandbytes==0.39.0
+#python -m bitsandbytes
+
+
+pip install transformers 
+#from transformers import AutoModelForCausalLM, LlamaForCausalLM, LlamaTokenizer
+pip install accelerate peft loguru
+
+```
+
 [install link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network)
 
 ```bash
@@ -127,6 +144,15 @@ nvidia-smi
 nvidia-smi topo --matrix
 ```
 
+
+```bash
+# uninstall
+apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
+ "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" "*nvvm*"
+apt-get --purge remove "*nvidia*" "libxnvctrl*"
+apt-get autoremove
+
+```
 # Nrok
 
 ```
