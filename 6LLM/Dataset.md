@@ -16,3 +16,7 @@ train_0.5M_CN
 
 #  阿里Data-Juicer
   
+
+# 数据增强方法
+
+https://zhuanlan.zhihu.com/p/145521255
