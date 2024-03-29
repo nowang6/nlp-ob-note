@@ -82,6 +82,20 @@ torch.mm(a,b)
 ## 矩阵的秩 - 极大线性无关组
 ![[Pasted image 20230909181453.png]]
 
+```python
+import numpy as np
+
+# 定义一个非方阵的矩阵
+matrix = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [4, 5, 6]])
+
+# 计算矩阵的秩
+rank = np.linalg.matrix_rank(matrix)
+
+print("矩阵的秩为:", rank)
+```
+
 
 ## 矩阵的乘法
 
