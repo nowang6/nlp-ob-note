@@ -278,4 +278,12 @@ from torch.autograd import Variable
 
 ```
 
+# Flash Attention
+```sh
+git clone https://github.com/Dao-AILab/flash-attention
+cd flash-attention
+python setup.py install
+cd csrc/rotary && pip install .
+```
+
 
