@@ -9,6 +9,13 @@ cat train_data.csv | cut -f2,4 -d"," | more # 查看第2列到第4列，分隔�
 split -l 10000 -d -a3 train_data.csv train0 #切割文件，每个文件1万行，输出为train0xxx
 ```
 
+```sh
+total_lines=$(wc -l < wiki_zh_large.txt) 
+split -l 23600 wiki_zh.large wiki_chunk_
+
+for file in $(ls wiki_chunk_*); do mv "$file" "$file.txt"; done
+```
+
 # 安装
 
 ## 包管理
@@ -115,49 +122,12 @@ pip install accelerate peft loguru
 
 ```
 
-[install link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_network)
 
 ```bash
-vim /etc/modprobe.d/blacklist.conf
-blacklist nouveau
-
-update-initramfs -u
-
-#卸载
-apt-get remove --purge '^nvidia-.*'
-apt-get remove --purge '^libnvidia-.*'
-apt-get remove --purge '^cuda-.*'
-
-apt search nvidia-driver
-
-#安装依赖
-apt-get install build-essential
-apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev vim curl
-
-#安装
-dpkg -i cuda-keyring_1.1-1_all.deb
-add-apt-repository contribsudo apt-get update
-apt-get -y install cuda-toolkit-12-3
-apt-get install -y cuda-drivers
-
-nvidia-smi
-nvidia-smi topo --matrix
-```
-
-
-```bash
-# uninstall
-apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
- "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" "*nvvm*"
-apt-get --purge remove "*nvidia*" "libxnvctrl*"
-apt-get autoremove
-
-```
 # Nrok
-
-```
 tar -xvzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
 nohup ngrok http 8080 --log=stdout > ngrok.log &
+
 ```
 
 
@@ -185,4 +155,7 @@ apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-```
+
+# 网络
+
+[How to set clash for linux. Clash ](https://medium.com/@RickyYang118/how-to-set-clash-for-linux-0bac62d47c55)

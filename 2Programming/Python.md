@@ -1,17 +1,28 @@
 # 环境
 ```
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-conda create --name llm python=3.10 -y
-conda activate llm
-pip install torch transformers
+conda create --name py3 python=3.10 -y
+conda activate py3
+
 ```
 
 ```
-pip freeze > requirement.txt
+pip install torch==2.2.0
+pip install transformers==4.38.2
+pip install datasets==2.17.1
+pip install accelerate==0.27.2
+pip install peft==0.9.0
+pip install trl==0.7.11
+pip install deepspeed==0.13.1
+pip install bitsandbytes==0.41.3
+pip install flash-attn==2.5.5
+
+
 ```
 
 ```python
-jupyter lab --ip='*' --port=8701 --notebook-dir='/home/niwang' --no-browser
+jupyter lab --ip='*' --port=8080 --notebook-dir='/home/niwang/jupter' --no-browser
+
 
 import os
 

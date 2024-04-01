@@ -9,6 +9,8 @@ CuDNN：（CUDA Deep Neural Network library）GPU加速库
 
 TensorRT： 深度学习推理引擎
 
+HBM(High Bandwidth Memory)高带宽存储
+
 
 # 昇腾
 

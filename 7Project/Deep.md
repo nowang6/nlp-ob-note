@@ -13,3 +13,9 @@
 
 ### 排序模块
 
+
+
+## 论文
+
+
+https://github1s.com/alwdhaieufna/llm_ner/blob/main/finetune.py
