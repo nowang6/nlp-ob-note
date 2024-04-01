@@ -9,6 +9,9 @@
 
 ![[Pasted image 20240212121656.png|300]]
 
+## lmsys
+Vicuna
+
 # 中国
 
 
